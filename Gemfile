@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'faraday', '~> 0.9'
+gem 'faraday', '~> 2.7'
 
 group :development, :test do
 
-  gem 'rspec', '~> 3.2'
-  gem 'webmock', '~> 1.21'
-  gem 'rake', '~> 10.4'
+  gem 'rspec', '~> 3.12'
+  gem 'webmock', '~> 3.18'
+  gem 'rake', '~> 13.0'
   gem 'coveralls', require: false
 
 end

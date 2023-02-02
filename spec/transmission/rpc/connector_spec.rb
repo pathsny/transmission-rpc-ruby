@@ -79,4 +79,14 @@ describe Transmission::RPC::Connector do
 
   end
 
+  describe 'JSON parse emoji unicode' do
+    before :each do
+      @connector = Transmission::RPC::Connector.new
+      @response = OpenStruct.new(body: '{"a":"\u1f365"}')
+    end
+    it 'should parse mangled emoji unicode char point' do
+      expect(@connector.send(:json_body, @response)).to eq({"a" => "🍥"})
+    end
+  end
+
 end

@@ -30,8 +30,18 @@ module Transmission
 
       private
 
+      def mangle_json(str)
+        str.gsub(/\\u([0-9a-f]{5,6})/i) do
+          begin
+            $1.to_i(16).chr(Encoding::UTF_8)
+          rescue RangeError
+            $&
+          end
+        end
+      end
+
       def json_body(response)
-        JSON.parse response.body
+        JSON.parse mangle_json(response.body)
       rescue
         {}
       end
