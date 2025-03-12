@@ -64,8 +64,8 @@ module Transmission
             faraday.request  :url_encoded
             faraday.response :logger
             faraday.adapter  Faraday.default_adapter
+            faraday.request :authorization, :basic, @credentials[:username], @credentials[:password]
           end
-          connection.basic_auth(@credentials[:username], @credentials[:password]) if @credentials
           connection
         end
       end
