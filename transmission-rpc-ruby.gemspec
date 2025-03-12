@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'transmission-rpc-ruby'
-  s.version     = '0.4.0'
+  s.version     = '0.4.2'
   s.date        = '2015-05-09'
   s.summary     = "Transmission RPC wrapper in Ruby"
   s.description = "A new transmission RPC wrapper for Ruby. All object oriented for controlling remote transmission daemons."
